@@ -43,7 +43,7 @@ namespace SortingAlgorithms
 
         public static List<int> InsertionSort(List<int> sortList)
         {
-            //How does this work? 
+            //Implement this one next
 
             return sortList;
         }

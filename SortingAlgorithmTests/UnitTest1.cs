@@ -24,5 +24,21 @@ namespace SortingAlgorithmTests
             CollectionAssert.AreEqual(sortedList, listToSort, StructuralComparisons.StructuralComparer);
 
         }
+
+        [TestMethod]
+        public void BubbleSortTestFail()
+        {
+            var listToSort = new List<int>();
+            int[] numbers = { 15, 13, 9, 6, 8, 10, 11, 12 };
+            listToSort.AddRange(numbers);
+
+            var sortedList = new List<int>();
+            int[] numbersInOrder = { 8, 6, 9, 10, 11, 12, 13, 15 };
+            sortedList.AddRange(numbersInOrder);
+
+            listToSort = Algorithms.BubbleSort(listToSort);
+            CollectionAssert.AreNotEqual(sortedList, listToSort, StructuralComparisons.StructuralComparer);
+
+        }
     }
 }

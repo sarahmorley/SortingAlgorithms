@@ -5,41 +5,41 @@ namespace SortingAlgorithms
 {
     class Algorithms
     {
-            static void Main(string[] args)
+        static void Main(string[] args)
+        {
+            var sortList = new List<int>();
+            int[] numbers = { 2, 2, 5, 3, 1, 7, 6, 1, 8, 9 };
+            sortList.AddRange(numbers);
+
+            sortList = BubbleSort(sortList);
+            foreach (var number in sortList)
             {
-                var sortList = new List<int>();
-                int[] numbers = { 2, 2, 5, 3, 1, 7, 6, 1, 8, 9 };
-                sortList.AddRange(numbers);
-
-                sortList = BubbleSort(sortList);
-                foreach (var number in sortList)
-                {
-                    Console.Write(number + " ");
-                }
-
-                Console.ReadLine();
+                Console.Write(number + " ");
             }
 
-            public static List<int> BubbleSort(List<int> sortList2)
+            Console.ReadLine();
+        }
+
+        public static List<int> BubbleSort(List<int> sortList)
+        {
+            bool swap = true;
+            while (swap)
             {
-                bool swap = true;
-                while (swap)
+                swap = false;
+                for (int z = 0; z < sortList.Count - 1; z++)
                 {
-                    swap = false;
-                    for (int z = 0; z < sortList2.Count - 1; z++)
+                    if (sortList[z] > sortList[z + 1])
                     {
-                        if (sortList2[z] > sortList2[z + 1])
-                        {
-                            var zHolder = sortList2[z];
-                            sortList2[z] = sortList2[z + 1];
-                            sortList2[z + 1] = zHolder;
-                            swap = true;
-                        }
+                        var zHolder = sortList[z];
+                        sortList[z] = sortList[z + 1];
+                        sortList[z + 1] = zHolder;
+                        swap = true;
                     }
                 }
-
-                return sortList2;
             }
+
+            return sortList;
         }
     }
+}
 

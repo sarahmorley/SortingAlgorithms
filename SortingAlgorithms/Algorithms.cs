@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortingAlgorithms
 {
-    class Algorithms
+    public class Algorithms
     {
         static void Main(string[] args)
         {
@@ -37,6 +37,13 @@ namespace SortingAlgorithms
                     }
                 }
             }
+
+            return sortList;
+        }
+
+        public static List<int> InsertionSort(List<int> sortList)
+        {
+            //How does this work? 
 
             return sortList;
         }
